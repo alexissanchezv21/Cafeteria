@@ -1,11 +1,9 @@
-//conexion
 const mysql= require('mysql2/promise');
 
 require('dotenv').config();
 
-//Es una conexion 1 a 1
 async function conexion() {
-    const db= await mysql.createConnection({         //createPool es para distintas conexiones
+    const db= await mysql.createConnection({
         host: process.env.DB_HOST,
         user: process.env.DB_USER,
         password: process.env.DB_PASSWORD,
